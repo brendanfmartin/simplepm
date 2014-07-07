@@ -1,1 +1,1 @@
-This is a node todo app that is in progress
+This is a localStorage todo app that is in progress
