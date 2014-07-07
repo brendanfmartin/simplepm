@@ -1,0 +1,117 @@
+
+
+
+h1 {
+	font-size: 6em;
+}
+h2 {
+	font-size: 4em;
+}
+
+
+/*placeholder*/
+::-webkit-input-placeholder {
+   color: #e2e2e2;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #e2e2e2;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #e2e2e2;  
+}
+
+:-ms-input-placeholder {  
+   color: #e2e2e2;  
+}
+
+input {
+	border:none;
+	-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+.add_task {
+	height: 10px;
+	width: 10px;
+	padding: 10px;
+	line-height: 10px;
+	background: gray;
+	border-radius: 100%;
+	font-size: 2em;
+	text-align: center;
+}
+
+
+.task {
+	padding: 25px 5px 5px 5px;
+	border-bottom: 3px solid black;
+	font-size: 5em;
+}
+
+.sub_task {
+	margin-left: 20px;
+	padding: 2px 20px 4px;
+	border-left: 3px solid black;
+	font-size: 2em;
+}
+
+.tasks_header h4{
+	float: left;
+}
+
+.add_task {
+	float: left;
+} 
+
+
+
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"]:checked + label {
+	color: gray;
+	opacity: .5;
+	text-decoration: line-through;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    background:green;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+
+
+
+
+
+
+.task_delete {
+	float: right;
+	text-align: center;
+	cursor: pointer;
+}

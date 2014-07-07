@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
+	</head>
+	<body>
+		<div class="container">
+			<h1>Project</h1>
+			<p>Squid roof party meh, disrupt Portland drinking vinegar Helvetica chambray selvage lo-fi. Readymade Marfa Echo Park Blue Bottle, yr meh hoodie cliche forage 90's organic fashion axe. Umami Intelligentsia pickled slow-carb.</p>
+			<h2>Tasks</h2>
+			<h3><label><input type="checkbox" name="task_one" value="task_one" class="task_one"/>Task one</label></h3>
+			<h4><label><input type="checkbox" name="sub_task_one" value="sub_task_one" class="sub_task_one"/>&nbsp;sub task one</label></h4>
+			<h3><label><input type="checkbox" name="task_two" value="task_two" class="task_two"/>Task two<label></h3>
+		</div>
+	
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		
+		$(function(){
+			var socket = io();
+
+			$(':checkbox').click(function(e){
+				var data = {
+					task_name: this.name,
+					task_value: this.value,
+					task_completed: $(this).is(':checked'),
+					task_class: this.className
+				}
+				socket.emit('task_checked', data);
+			});
+
+			socket.on('task_checked',function(data){
+				var checkbox = $('.'+data.task_class+'');
+				checkbox.prop('checked', data.task_completed);
+			});
+
+		});
+
+		</script>
+	</body>
+</html>
