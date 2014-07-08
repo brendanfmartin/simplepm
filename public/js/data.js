@@ -1,5 +1,5 @@
 // data.js
-
+'use strict';
 // set method for storing JSON object in localStorage
 Storage.prototype.setObject = function(key, value) {
     this.setItem(key, JSON.stringify(value));
@@ -12,11 +12,21 @@ Storage.prototype.getObject = function(key) {
 }
 
 // get method for retrieving all JSON objects in localStorage
-Storage.prototype.getAllObjects = function() {
+Storage.prototype.getAllObject = function() {
 	var arr = [];
 	for(var i=0, len=localStorage.length; i<len; i++) {
 		var key = localStorage.key(i), value = localStorage[key];
 		arr.push(key+value && key+JSON.parse(value));
+	}
+    return arr;
+}
+
+// get method for retrieving all JSON objects names in localStorage
+Storage.prototype.getAllObjectNames = function() {
+	var arr = [];
+	for(var i=0, len=localStorage.length; i<len; i++) {
+		var key = localStorage.key(i);
+		arr.push(key);
 	}
     return arr;
 }

@@ -5,7 +5,7 @@
 //
  */ 
 
-
+'use strict';
 // 
 function Project(title, description) {
 	this.title = title;

@@ -4,7 +4,7 @@
 //
 //
  */
-
+'use strict';
 /*
 
 	levels: info, success, warning, failure

@@ -1,17 +1,20 @@
 // main.js
 // 
+'use strict';
+
 $(function(){
 
-	var allObjects = localStorage.getAllObjects();
-	if(allObjects) {
-		for (var i = allObjects.length - 1; i >= 0; i--) {
-			console.log(allObjects[i]);
-			$('.current_project').append(allObjects[i]);
-			// function to add to page... maybe named printProjects?
-		};
-	} else {
-		console.log('no objects')
-	}
+	// var allObjects = localStorage.getAllObjectNames();
+	// if(allObjects) {
+	// 	$('.open_projects').append('<ul></ul>');
+	// 	for (var i = allObjects.length - 1; i >= 0; i--) {
+	// 		console.log(allObjects[i]);
+	// 		$('.open_projects ul').append('<li>'+allObjects[i]+'</li>');
+	// 		// function to add to page... maybe named printProjects?
+	// 	};
+	// } else {
+	// 	console.log('no objects')
+	// }
 
 	// change to function named enterToTab
 	$('body').on('keydown', 'input', function(e){
