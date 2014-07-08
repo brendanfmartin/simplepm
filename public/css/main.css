@@ -28,9 +28,10 @@ h2 {
 
 input {
 	border:none;
-	-webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+	box-shadow: none;
+		-webkit-box-shadow: none;
+    	-moz-box-shadow: none;
+    outline:none;
 }
 
 
@@ -45,6 +46,7 @@ input {
 	left: 50%;
 	margin-top: -20px;
 	line-height: 80px;
+	display: none;
 }
 
 .info{

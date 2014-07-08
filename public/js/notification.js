@@ -24,14 +24,10 @@ Notification.prototype.alert = function() {
 	// get the new margin to center
 	var newMargin = -(newWidth/2);
 	// set alert so you only search through DOM once
-	$alert = $('#alert');
-	// remove all classes
-	$alert
+	$('#alert')
 		.removeClass()
 		.addClass(this.level)
-		.html(this.title);
-	// add in new width and margin
-	$alert.css({'width': newWidth, 'margin-left': newMargin});
-	// show and hide
-	// $alert.fadeIn(2000).delay(1500).fadeOut(2000);
+		.html(this.title)
+		.css({'width': newWidth, 'margin-left': newMargin})
+		.fadeIn(1000).delay(1500).fadeOut(2000);
 }
