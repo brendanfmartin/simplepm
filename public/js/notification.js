@@ -10,8 +10,8 @@
 	levels: info, success, warning, failure
  */
 function Notification(title, level) {
-		this.title = title,
-		this.level = level;
+	this.title = title,
+	this.level = level;
 }
 
 
