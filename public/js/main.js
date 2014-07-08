@@ -62,7 +62,18 @@ $(function(){
 	
 
 
-	
+	var $task_list = $('.task_list');
+	$('.task_input').on('blur', function(e){
+		if($('.task_input')[0].value != ''){
+			var data = $('.task_input');
+			console.log(data[0].value);
+			$task_list.append('<div class="task">' +
+			'<span value="'+data[0].value+'" id="'+data[0].value+'" />'
+			+ data[0].value
+			+'</div>');
+		}
+	});
+
 
 	// $task_list.append('<div class="task">' +
 	// 		'<span value="'+data.task_value+'" class="'+data.task_class+' task_title" id="'+data.task_name+'" />'
