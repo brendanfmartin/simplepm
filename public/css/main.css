@@ -34,6 +34,37 @@ input {
 }
 
 
+#alert {
+	height:80px;
+	width: 200px;
+	position: fixed;
+	border-radius: 20px;
+	border: 5px solid;
+	text-align:center;
+	top:0;
+	left: 50%;
+	margin-top: -20px;
+	line-height: 80px;
+}
+
+.info{
+	color:#00529B;
+	background:#BDE5F8;
+}
+.success{
+	color:#4F8A10;
+	background:#DFF2BF;
+}
+.warning{
+	color:#9F6000;
+	background:#FEEFB3;
+}
+.failure {
+	color:#D8000C;
+	background:#FFBABA;
+}
+
+
 
 .add_task {
 	height: 10px;
