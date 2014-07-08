@@ -4,17 +4,17 @@
 
 $(function(){
 
-	// var allObjects = localStorage.getAllObjectNames();
-	// if(allObjects) {
-	// 	$('.open_projects').append('<ul></ul>');
-	// 	for (var i = allObjects.length - 1; i >= 0; i--) {
-	// 		console.log(allObjects[i]);
-	// 		$('.open_projects ul').append('<li>'+allObjects[i]+'</li>');
-	// 		// function to add to page... maybe named printProjects?
-	// 	};
-	// } else {
-	// 	console.log('no objects')
-	// }
+	var printProject = function(project){
+		$('input.project_name_input').val(project.title);
+		$('input.project_description_input').val(project.description);
+	}
+
+	var firstObject = localStorage.getSingleObject();
+	if(firstObject) {
+		printProject(firstObject);
+	} else {
+		console.log('no objects')
+	}
 
 	// change to function named enterToTab
 	$('body').on('keydown', 'input', function(e){
@@ -39,6 +39,7 @@ $(function(){
 
 		if($('.project_name_input')[0].value != '' && $('.project_description_input')[0].value != '') {
 			try {
+				// check to see if project already exists
 				var newProject = new Project(projectTitle, projectDescription);
 				localStorage.setObject(projectTitle, JSON.stringify(newProject));
 				var confirmNotification = new Notification('Project Saved!', 'info');
@@ -52,7 +53,7 @@ $(function(){
 	});
 
 
-
+	
 	
 	// $('.project_description').html('<p>'+Project.description+'</p>');
 

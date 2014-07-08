@@ -12,11 +12,11 @@ Storage.prototype.getObject = function(key) {
 }
 
 // get method for retrieving all JSON objects in localStorage
-Storage.prototype.getAllObject = function() {
+Storage.prototype.getAllObjects = function() {
 	var arr = [];
 	for(var i=0, len=localStorage.length; i<len; i++) {
 		var key = localStorage.key(i), value = localStorage[key];
-		arr.push(key+value && key+JSON.parse(value));
+		arr.push(JSON.parse(value));
 	}
     return arr;
 }
@@ -29,4 +29,11 @@ Storage.prototype.getAllObjectNames = function() {
 		arr.push(key);
 	}
     return arr;
+}
+
+
+// get method for retrieving all JSON objects in localStorage
+Storage.prototype.getSingleObject = function() {
+	var key = localStorage.key(0), value = localStorage[key];
+	return JSON.parse(JSON.parse(value));
 }
