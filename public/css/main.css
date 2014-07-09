@@ -26,7 +26,12 @@ h2 {
    color: #e2e2e2;  
 }
 
+ul {
+	list-style: none;
+}
+
 input {
+	width: 100%;
 	border:none;
 	box-shadow: none;
 		-webkit-box-shadow: none;
@@ -34,18 +39,55 @@ input {
     outline:none;
 }
 
+/*textarea {
+	width: 100%;
+	height: 1.5em;
+	border: none;
+	box-shadow: none;
+		-webkit-box-shadow: none;
+    	-moz-box-shadow: none;
+    outline:none;
+    resize: none;
+}*/
+
+/*
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"]:checked + label {
+	color: gray;
+	opacity: .5;
+	text-decoration: line-through;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    background:green;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+*/
+
+
+
+
 /* Notifications */
 #alert {
-	height:80px;
+	height:40px;
 	width: 200px;
 	position: fixed;
 	border-radius: 20px;
-	border: 5px solid;
+	border: 1px solid;
 	text-align:center;
 	top:0;
 	left: 50%;
 	margin-top: -20px;
-	line-height: 80px;
+	line-height: 55px;
 	display: none;
 }
 
@@ -70,13 +112,14 @@ input {
 	color:gray;
 }
 
-
+.task_container {
+	background: #F7F7F7;
+}
 .task {
 	padding: 25px 5px 5px 5px;
-	border-bottom: 3px solid black;
-	font-size: 5em;
+	border-bottom: 1px dotted gray;
+	font-size: 2em;
 }
-
 .sub_task {
 	margin-left: 20px;
 	padding: 2px 20px 4px;
@@ -87,25 +130,4 @@ input {
 
 
 
-
-input[type="checkbox"] {
-    display:none;
-}
-
-input[type="checkbox"]:checked + label {
-	color: gray;
-	opacity: .5;
-	text-decoration: line-through;
-}
-
-input[type="checkbox"] + label span {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    background:green;
-}
-
-input[type="checkbox"] {
-    display:none;
-}
 

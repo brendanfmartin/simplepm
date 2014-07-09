@@ -1,23 +1,25 @@
 <!doctype html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="public/css/main.css">
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
+		<!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	 -->
 	</head>
 	<body>
 		<div id="alert"></div>
-		<div class="container open_projects"></div>
 		<div class="container">
-			<h1><input class="project_name_input" type="text" placeholder="Enter project name..."></h1>
-			<h2><input class="project_description_input" type="text" placeholder="Enter description..."></h2>
-			<div class="task_list"></div>
-			<h2><input class="task_input" type="text" name="task_name" placeholder="Enter task..."/></h2>
-			
-			
+			<h1><input class="project_name_input" autocomplete="off" type="text" placeholder="Enter project name..."></h1>
+			<h2>
+				<input class="project_description_input textarea_expand" autocomplete="off" type="textarea" placeholder="Enter description...">
+			</h2>
 		</div>
-		
-	
+		<div class="task_container">
+			<div class="container">
+			<h2><input class="task_input" autocomplete="off" type="text" name="task_name" placeholder="Enter task..."/></h2>
+				<div class="task_list"></div>
+			</div>
+		</div>
+		<script src="/public/js/libs/jquery.min.js"></script>
 		<script src="/public/js/project.js"></script>
 		<script src="/public/js/notification.js"></script>
 		<script src="/public/js/data.js"></script>
