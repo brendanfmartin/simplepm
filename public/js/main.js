@@ -16,14 +16,6 @@ $(function(){
 	}
 
 
-	// var textarea = $('textarea_expand')
-	// var limit = 200;
-
-	// textarea.oninput = function() {
-	//   textarea.style.height = "";
-	//   textarea.style.height = Math.min(textarea.scrollHeight, 300) + "px";
-	// };
-
 	var firstObject = localStorage.getSingleObject();
 	if(firstObject) {
 		printProject(firstObject);
@@ -31,8 +23,8 @@ $(function(){
 		console.log('no objects')
 	}
 
+
 	// change to function named enterToTab
-	
 	$('.project_name_input, .project_description_input').on('keydown', function(e){
 		var self = $(this);
 		if(e.keyCode == 13) {
@@ -45,7 +37,10 @@ $(function(){
 		}
 	});
 
+
 	// change to function saveProjectOnInput?
+	// saves project on input
+	// TODO - saves too much, creates a new storage all the time
 	$('.project_name_input, .project_description_input').on('blur', function(e){
 
 		var projectTitle = $('.project_name_input')[0].value;
@@ -67,6 +62,7 @@ $(function(){
 	});
 
 
+	// pressing enter on inputs moves to next input
 	$('.project_name_input, .project_description_input').on('keydown', function(e){
 		var self = $(this);
 		if(e.keyCode == 13) {
