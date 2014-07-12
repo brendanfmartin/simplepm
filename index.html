@@ -2,11 +2,75 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="public/css/libs/bootstrap.min.css">
+  		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="public/css/main.css">
 		<!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	 -->
 	</head>
 	<body>
-		<div id="alert"></div>
+
+		<script type="text/x-handlebars">
+		    <div class="navbar">
+		      <div class="navbar-inner">
+		        <a class="brand" href="#">SimplePM</a>
+		        <ul class="nav">
+		          <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
+		          <!--<li>{{#link-to 'about'}}About{{/link-to}}</li>-->
+		        </ul>
+		      </div>
+		    </div>
+
+		    {{outlet}}
+		</script>
+
+		<script type="text/x-handlebars" id="about">
+			<h1>About</h1>
+		</script>
+
+		<script type="text/x-handlebars" id="index">
+			<h1>Index</h1>
+		</script>
+
+		<script type="text/x-handlebars" id="projects">
+			<div class="container-fluid">
+		      <div class="row-fluid">
+		        <div class="span3">
+		          <table class='table'>
+		            <thead>
+		              <tr><th>All Projects</th></tr>
+		            </thead>
+		           	<tr><td>
+		           		{{#link-to 'new_project'}}create a project{{/link-to}}
+		           	</td></tr>
+		            {{#each model}}
+		            <tr><td>
+		                {{#link-to 'project' this}}
+		                	{{this.id}} {{title}} <small class='muted'><br> {{description}}</small>
+		                {{/link-to}}
+		            </td></tr>
+		            {{/each}}
+		          </table>
+		        </div>
+		        <div class="span9">
+		          {{outlet}}
+		        </div>
+		      </div>
+		    </div>
+		</script>
+
+		<script type="text/x-handlebars" id="project">
+			<h1>{{title}}</h1>
+			<h2>{{description}}</h2>
+			<h3>{{tasks}}</h3>
+		</script>
+
+		<script type="text/x-handlebars" id="new_project">
+			<h2>Create Project</h2>
+			<h1>{{input type="text" class="project_name_input" placeholder="Project Title" value=title}}</h1>
+			<h1>{{input type="text" placeholder="Project Description" value=description}}</h1>
+		</script>
+
+
+		<!-- <div id="alert"></div>
 		<div class="container">
 			<h1><input class="project_name_input" autocomplete="off" type="text" placeholder="Enter project name..."></h1>
 			<h2>
@@ -18,8 +82,10 @@
 			<h2><input class="task_input" autocomplete="off" type="text" name="task_name" placeholder="Enter task..."/></h2>
 				<div class="task_list"></div>
 			</div>
-		</div>
-		<script src="/public/js/libs/jquery.min.js"></script>
+		</div> -->
+		<script src="/public/js/libs/jquery-1.9.1.js"></script>
+		<script src="/public/js/libs/handlebars-1.0.0.js"></script>
+  		<script src="/public/js/libs/ember-1.0.0-rc.8.js"></script>
 		<script src="/public/js/project.js"></script>
 		<script src="/public/js/notification.js"></script>
 		<script src="/public/js/data.js"></script>
